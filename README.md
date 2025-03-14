@@ -72,6 +72,4 @@ This project is open-source and available under the **MIT License**.
 
 ---
 
-👨‍💻 **Author:** Clinton Yade  
-📧 **Contact:** [Your Email or GitHub Profile]
 
