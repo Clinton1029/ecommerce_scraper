@@ -1,20 +1,25 @@
-# 📦 Alibaba E-Commerce Scraper
+# 🛒 E-Commerce Web Scraper
 
 ## 🚀 Project Overview
-This project is a **web scraper** for extracting product details from **Alibaba** using **Selenium and BeautifulSoup**. The scraper fetches product names, prices, ratings, and supplier details and saves them in **CSV, Excel, and SQLite database**.
+This project is a **web scraper** designed to extract product details from multiple e-commerce websites using **Selenium and BeautifulSoup**. The scraper fetches product names, prices, ratings, and supplier details, storing them in **CSV, Excel, and an SQLite database**.
 
 ## 📌 Features
-- ✅ Scrapes the first **50 products** from Alibaba.
-- ✅ Uses **Selenium** to bypass JavaScript-based loading.
+- ✅ Scrapes product details from **Amazon, eBay, Jumia, Alibaba, Best Buy, and Walmart**.
+- ✅ Uses **Selenium** to handle JavaScript-based loading and anti-bot protection.
 - ✅ Saves data in **CSV, Excel, and SQLite database**.
-- ✅ Implements **randomized delays** to mimic human behavior.
+- ✅ Implements **randomized delays** to mimic human browsing behavior.
 
 ## 📂 Project Structure
 ```
 Ecommerce_Scraper/
 │── data/                 # Folder for storing extracted data (CSV, Excel, SQLite)
 │── scripts/
-│   ├── alibaba_scraper.py # Main script for scraping Alibaba products
+│   ├── amazon_scraper.py  # Amazon scraping script
+│   ├── ebay_scraper.py     # eBay scraping script
+│   ├── jumia_scraper.py    # Jumia scraping script
+│   ├── alibaba_scraper.py  # Alibaba scraping script
+│   ├── bestbuy_scraper.py  # Best Buy scraping script
+│   ├── walmart_scraper.py  # Walmart scraping script
 │── venv/                 # Virtual environment (optional)
 │── requirements.txt       # Dependencies for the project
 │── README.md              # Project documentation
@@ -40,20 +45,27 @@ venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 ```
 
-### 4️⃣ **Run the Scraper**
+### 4️⃣ **Run a Scraper**
+To scrape products from a specific website, run the corresponding script:
 ```bash
-python scripts/alibaba_scraper.py
+python scripts/amazon_scraper.py  # Scrape Amazon
+python scripts/ebay_scraper.py    # Scrape eBay
+python scripts/jumia_scraper.py   # Scrape Jumia
+python scripts/alibaba_scraper.py # Scrape Alibaba
+python scripts/bestbuy_scraper.py # Scrape Best Buy
+python scripts/walmart_scraper.py # Scrape Walmart
 ```
 
 ## 📊 Output
-- `data/alibaba_products.csv` – CSV file with scraped products
-- `data/alibaba_products.xlsx` – Excel file with product details
-- `data/alibaba_products.db` – SQLite database storing products
+Each script generates the following files inside the `data/` folder:
+- `amazon_products.csv`, `ebay_products.csv`, `jumia_products.csv`, etc.
+- `amazon_products.xlsx`, `ebay_products.xlsx`, `jumia_products.xlsx`, etc.
+- `ecommerce_products.db` – SQLite database storing all scraped products.
 
 ## ⚠️ Notes
-- Alibaba has anti-bot measures, so **Selenium with random delays** is used.
-- **Ensure you have Google Chrome installed** since Selenium needs it.
-- Modify `URL` inside `alibaba_scraper.py` for different product searches.
+- These websites have anti-bot measures, so **Selenium with random delays** is used.
+- **Ensure you have Google Chrome installed** since Selenium requires it.
+- Modify `URL` inside each scraper script to customize the product search.
 
 ## 📜 License
 This project is open-source and available under the **MIT License**.
